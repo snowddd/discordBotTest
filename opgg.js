@@ -440,6 +440,6 @@ client.on('message', msg => {
   })
 
 
-  client.login('NjYyMTA0OTAzNzkwODg2OTg0.Xg1HhA.gjbLNqMy31oSPu2eEB4_m-qCR4w')
+  client.login('Your discord bot key')
 
   console.log('opgg.server on')
