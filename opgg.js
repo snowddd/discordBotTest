@@ -2,6 +2,36 @@ const Discord = require('discord.js')
 const client = new Discord.Client()
 
 client.on('message', msg => {
+    msg.content = msg.content.toLowerCase();
+    
+    if(msg.content==='help'||msg.content==='幫助')
+    {
+    msg.reply('\n'+'1.直接輸入英雄英文中文名稱查詢OPGG網址'+'\n'+
+    '2.直接輸入路線名稱查詢在OPGG當路線的英雄'+'\n'+
+    `3.輸入 查詢 召喚師名稱 可以查詢garena台服戰績網玩家資料(查詢後需空一格)`)
+    }
+
+    if (msg.content.slice(0,2) === '查詢') {
+        if (msg.content.slice(3) !== '') {
+            msg.reply(`https://lol.moa.tw/summoner/show/${msg.content.slice(3)}`)
+          }
+      }
+      if (msg.content === 'top'||msg.content === '上路'||msg.content ==='上') {
+        msg.reply('https://i.imgur.com/Sgyu5b8.png'+'\n'+'https://i.imgur.com/ZF8DqFr.png')
+      }
+      if (msg.content === 'jungle' || msg.content ==='jg'||msg.content ==='打野' ) {
+        msg.reply('https://i.imgur.com/jmrqn0Y.png'+'\n'+'https://i.imgur.com/ilQ0KHF.png')
+      }
+      if (msg.content === 'mid' || msg.content ==='中路' || msg.content ==='中') {
+        msg.reply('https://i.imgur.com/prfcugI.png'+'\n'+'https://i.imgur.com/FbSvS1I.png')
+      }
+      if (msg.content === '射手' || msg.content ==='ad' || msg.content ==='bot') {
+        msg.reply('https://i.imgur.com/n7SaXjF.png')
+      }
+      if (msg.content === 'sup' || msg.content ==='support' || msg.content ==='輔助') {
+        msg.reply('https://i.imgur.com/6YGCix2.png'+'\n'+'https://i.imgur.com/Igip9qN.png')
+      }
+  
     if (msg.content === 'alistar' || msg.content ==='牛' || msg.content ==='亞歷斯塔') {
       msg.reply('https://tw.op.gg/champion/alistar/statistics/support')
     }
@@ -116,7 +146,7 @@ client.on('message', msg => {
     if (msg.content === 'malphite' || msg.content ==='墨菲特' || msg.content ==='石頭人') {
         msg.reply('https://www.op.gg/champion/malphite/statistics/top')
     }
-    if (msg.content === 'nocturne' || msg.content ==='夜曲' || msg.content ==='NOC') {
+    if (msg.content === 'nocturne' || msg.content ==='夜曲' || msg.content ==='noc') {
         msg.reply('https://www.op.gg/champion/nocturne/statistics/jungle')
     }
     if (msg.content === 'nidalee' || msg.content ==='豹女' || msg.content ==='奈德麗') {
@@ -440,6 +470,6 @@ client.on('message', msg => {
   })
 
 
-  client.login('Your discord bot key')
+  client.login('your discord bot client key')
 
   console.log('opgg.server on')
